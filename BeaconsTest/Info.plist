@@ -30,6 +30,8 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Precisamos usar acessar a localização do device para localizar os beacons.</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

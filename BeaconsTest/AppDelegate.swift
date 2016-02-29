@@ -10,13 +10,28 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate {
 
     var window: UIWindow?
+    
+    let beaconManager = ESTBeaconManager()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        UIApplication.sharedApplication().registerUserNotificationSettings(
+            UIUserNotificationSettings(forTypes: .Alert, categories: nil))
+
+        
+        self.beaconManager.delegate = self
+        
+        self.beaconManager.requestAlwaysAuthorization()
+        
+        self.beaconManager.startMonitoringForRegion(CLBeaconRegion(
+            proximityUUID: NSUUID(UUIDString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")!,
+            major: 10075, minor: 15233, identifier: "monitored region"))
+        
         return true
     }
 
@@ -104,6 +119,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
                 abort()
             }
+        }
+    }
+    
+    // MARK: - Beacon delegate
+    
+    func beaconManager(manager: AnyObject, didEnterRegion region: CLBeaconRegion) {
+        let notification = UILocalNotification()
+        notification.alertBody = "Beacon detecteado!"
+        UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+    }
+    
+    func beaconManager(manager: AnyObject, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
+        for beacon in beacons{
+            print("Beacon \(beacon.debugDescription)")
         }
     }
 

@@ -13,6 +13,7 @@
 		7ECF8CA71C84746E00482A1D /* BeaconsTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7ECF8CA51C84746E00482A1D /* BeaconsTest.xcdatamodeld */; };
 		7ECF8CA91C84746E00482A1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7ECF8CA81C84746E00482A1D /* Assets.xcassets */; };
 		7ECF8CAC1C84746E00482A1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ECF8CAA1C84746E00482A1D /* LaunchScreen.storyboard */; };
+		7ECF8CB41C848C7200482A1D /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECF8CB31C848C7200482A1D /* EstimoteSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		7ECF8CA81C84746E00482A1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7ECF8CAB1C84746E00482A1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7ECF8CAD1C84746E00482A1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7ECF8CB31C848C7200482A1D /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EstimoteSDK.framework; sourceTree = "<group>"; };
+		7ECF8CB71C848E5200482A1D /* ObjCBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjCBridge.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ECF8CB41C848C7200482A1D /* EstimoteSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +60,7 @@
 		7ECF8C9D1C84746E00482A1D /* BeaconsTest */ = {
 			isa = PBXGroup;
 			children = (
+				7ECF8CB31C848C7200482A1D /* EstimoteSDK.framework */,
 				7ECF8C9E1C84746E00482A1D /* AppDelegate.swift */,
 				7ECF8CA01C84746E00482A1D /* ViewController.swift */,
 				7ECF8CA21C84746E00482A1D /* Main.storyboard */,
@@ -63,6 +68,7 @@
 				7ECF8CAA1C84746E00482A1D /* LaunchScreen.storyboard */,
 				7ECF8CAD1C84746E00482A1D /* Info.plist */,
 				7ECF8CA51C84746E00482A1D /* BeaconsTest.xcdatamodeld */,
+				7ECF8CB71C848E5200482A1D /* ObjCBridge.h */,
 			);
 			path = BeaconsTest;
 			sourceTree = "<group>";
@@ -252,10 +258,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BeaconsTest",
+				);
 				INFOPLIST_FILE = BeaconsTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.bulgasoftwares.BeaconsTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
 			};
 			name = Debug;
 		};
@@ -263,10 +275,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BeaconsTest",
+				);
 				INFOPLIST_FILE = BeaconsTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.bulgasoftwares.BeaconsTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
 			};
 			name = Release;
 		};
