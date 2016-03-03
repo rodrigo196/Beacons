@@ -21,11 +21,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="SJn-or-J1G" detailTextLabel="U83-NP-Iye" style="IBUITableViewCellStyleSubtitle" id="R3c-63-akM">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="SJn-or-J1G" detailTextLabel="U83-NP-Iye" style="IBUITableViewCellStyleSubtitle" id="R3c-63-akM">
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="R3c-63-akM" id="HFf-g6-bs2">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SJn-or-J1G">
@@ -44,10 +44,14 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="3VN-gA-2Mk" kind="show" identifier="SegueToDetails" id="GFm-X1-SeF"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="mhq-KT-axt"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="54n-fH-9lZ"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -67,6 +71,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1374" y="450"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="mkc-Au-7Hm">
+            <objects>
+                <viewController id="3VN-gA-2Mk" customClass="DetailsViewController" customModule="BeaconsTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ifo-j5-Egn"/>
+                        <viewControllerLayoutGuide type="bottom" id="xPy-jG-iM9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hWu-xG-3HL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v1L-cO-MMt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2185" y="450"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7wk-fF-EWe">

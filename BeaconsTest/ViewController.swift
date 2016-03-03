@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, ESTBeaconManagerDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ESTBeaconManagerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -17,7 +17,7 @@ class ViewController: UIViewController, UITableViewDataSource, ESTBeaconManagerD
         proximityUUID: NSUUID(UUIDString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")!,
         identifier: "ranged region")
     
-    var beacons = [String :CLBeacon]()
+    var beacons = [CLBeacon]()
 
 
     override func viewDidLoad() {
@@ -53,17 +53,24 @@ class ViewController: UIViewController, UITableViewDataSource, ESTBeaconManagerD
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell")!
-        let beacon = self.beacons.values[self.beacons.startIndex.advancedBy(indexPath.row)]
+        let beacon = self.beacons[indexPath.row]
         cell.textLabel?.text = "Major: \(beacon.major)  Minor: \(beacon.minor)"
         cell.detailTextLabel?.text = "\(beacon.debugDescription)"
-        return cell
+        return cell   
+    }
+    
+    // MARK: - Tableview datasource delegate
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("SegueToDetails", sender: self)
     }
     
     // MARK: - BeaconsManager delegate methods
     
     func beaconManager(manager: AnyObject, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
+        self.beacons.removeAll()
         for nearestBeacon in beacons {
-           self.beacons["\(nearestBeacon.major):\(nearestBeacon.minor)"] = nearestBeacon
+           self.beacons.append(nearestBeacon)
         }
          self.tableView.reloadData()
     }

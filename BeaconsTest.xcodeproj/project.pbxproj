@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E0EA4D81C88CADA0072B5D0 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0EA4D71C88CADA0072B5D0 /* DetailsViewController.swift */; };
 		7ECF8C9F1C84746E00482A1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECF8C9E1C84746E00482A1D /* AppDelegate.swift */; };
 		7ECF8CA11C84746E00482A1D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECF8CA01C84746E00482A1D /* ViewController.swift */; };
 		7ECF8CA41C84746E00482A1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ECF8CA21C84746E00482A1D /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E0EA4D71C88CADA0072B5D0 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		7ECF8C9B1C84746D00482A1D /* BeaconsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeaconsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ECF8C9E1C84746E00482A1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7ECF8CA01C84746E00482A1D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				7ECF8CAD1C84746E00482A1D /* Info.plist */,
 				7ECF8CA51C84746E00482A1D /* BeaconsTest.xcdatamodeld */,
 				7ECF8CB71C848E5200482A1D /* ObjCBridge.h */,
+				7E0EA4D71C88CADA0072B5D0 /* DetailsViewController.swift */,
 			);
 			path = BeaconsTest;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				7ECF8CA11C84746E00482A1D /* ViewController.swift in Sources */,
 				7ECF8C9F1C84746E00482A1D /* AppDelegate.swift in Sources */,
 				7ECF8CA71C84746E00482A1D /* BeaconsTest.xcdatamodeld in Sources */,
+				7E0EA4D81C88CADA0072B5D0 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +311,7 @@
 				7ECF8CB21C84746E00482A1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
